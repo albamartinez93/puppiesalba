@@ -1,0 +1,63 @@
+<head>
+<style type="text/css">
+h2{
+border: 6px solid #800000;
+ border-bottom: 6px solid #800000;
+}
+</style>
+</head>
+
+<div class="container" style="background-color:rgb(251,251,243);">
+
+    <!-- Team Member Profiles -->
+
+    <div class="row">
+<div class="col-lg-12">
+
+            <img class="img-responsive" src="images/adopta.jpg">
+        </div>
+        <div class="col-lg-12">
+            <h2 class="page-header" style="color:#800000;">Borrar un anuncio <small>Eliminar un anuncio de la web</h2>
+        </div>
+		
+		 <div  ng-repeat="producto in productos " class="col-md-4 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                       
+						  <img src="images/Herramientas.png"  width="150px" height="150px"> 
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{producto.tipo}}</h3>
+                             <p>{{producto.raza}} </p>
+                            <p>{{producto.telf}} </p>
+                            <p>{{producto.desc}} </p>
+                        </div>
+						<div>
+							<button type="submit" ng-click="borrarProducto(producto)" class="btn btn-danger">Eliminar</button>
+							<div><br></div>
+							
+							<input type="password" ng-model="producto.password" placeholder="Password" required/>
+						</div>
+                    </div>
+					<div><br><br></div>
+                </div><!--/.col-md-4-->
+		</div>
+		
+	 <div class="row">
+   
+        <div class="col-lg-12">
+            <h2 class="page-header" style="color:#800000;">Modificar anuncio<small> Inserte los datos del animal</small></h2>
+		
+				<div id="formCrear" ng-submit="modificarProducto()" class="modificarProduct-form">
+				
+					<form action="#">
+						<input type="text" ng-model="nproductModificar.nombre" placeholder="Nombre" required/>
+						<input type="number" ng-model="nproductModificar.precio" placeholder="Precio" required/>
+						<input type="password" ng-model="nproductModificar.password" placeholder="Password" required/>
+						<div><br></div>
+						<button type="submit" class="btn btn-info">Modificar</button>
+					</form>
+				</div>
+                </div>
+</div>
+</div>

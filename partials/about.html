@@ -1,0 +1,48 @@
+<head>
+<style type="text/css">
+h2{
+border: 6px solid #800000;
+ border-bottom: 6px solid #800000;
+}
+</style>
+</head>
+
+<div class="container" style="background-color:rgb(251,251,243);">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <img class="img-responsive" src="images/adopta.jpg">
+        </div>
+        <div class="col-lg-12">
+            <h1 class="page-header">Introducir anuncio de un animal
+                <small></small>
+            </h1>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div ng-submit="producto()" class="product-form">
+						<h2 style="color:#800000;">Nuevo animal <small> Rellene todos los campos</small></h2>
+						<form action="#">
+							<label>Tipo de animal:</label><input type="text" ng-model="nproduct.tipo" placeholder="Tipo Animal" required/><br></br>
+							<label>Raza:</label><input type="text" ng-model="nproduct.raza" placeholder="Raza" required/>
+							<div><br></div>
+							<label>Telefono:</label><input type="text" ng-model="nproduct.telf" placeholder="Telefono" required/><br></br>
+                            <label>Descripción:</label><input type="text" ng-model="nproduct.desc" placeholder="Descripcion del animal" required/><br></br>
+                            <input type="file" accept="image/*" ng-model="nproduct.imagen" />
+							<div><br></div>
+							<button type="submit" class="btn btn-success">Aceptar</button>
+						</form>
+					</div>
+					
+        </div>
+
+    </div>
+
+</div>
+

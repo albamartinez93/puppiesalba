@@ -1,0 +1,38 @@
+0. Lanzar MongoDB:
+	mongod --dbpath data\db
+1. Arrancar en local Heroku: (requiere instalación previa de Heroku toolbelt: https://toolbelt.heroku.com/)
+	heroku local web
+2. Averiguar versión actual de node:
+	node --version
+3. Edit package.json and add:
+"engines": {
+    "node": "4.1.1"
+  },
+4. Instalar dependencias:
+	npm install
+5. heroku local web
+6. Registrarse en heroku dashaboard: https://dashboard.heroku.com/apps
+7. Crear repositorio GIT:
+	git init
+8. Añadir ficheros:
+	git add .
+9. Hacer un commit en local:
+git commit -m "Added app files."
+10. Logearte en heroku:
+	heroku login
+11. Crear la app en HEROKU, recordar URL de app:
+	heroku create
+12. Subir los ficheros a la app creada:
+	git push heroku master
+13. Instalar el add:on gratuito de mongolab:
+	heroku addons:create mongolab
+13. Recuperar la URL creada de la BBDD:
+	heroku config | grep MONGOLAB_URI
+12. Modificar el string de conexión de MongoClient en urlResponseHandlers.js con URL de MongoLab
+13. Subir cambios a repositorio local y luego remoto:
+	git add .
+	git commit -m "Changed mongodb url"
+	git push heroku master
+14. Ir a la app y ejecutarla, por ejemplo: https://ancient-beach-2285.herokuapp.com/app.html
+
+
