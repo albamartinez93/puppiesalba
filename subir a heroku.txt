@@ -35,4 +35,9 @@ git commit -m "Added app files."
 	git push heroku master
 14. Ir a la app y ejecutarla, por ejemplo: https://ancient-beach-2285.herokuapp.com/app.html
 
-
+machine api.heroku.com
+  login alba.martinez@opendeusto.es
+  password d8732eaf-b00d-49a1-ba72-11f348598278
+machine git.heroku.com
+  login alba.martinez@opendeusto.es
+  password d8732eaf-b00d-49a1-ba72-11f348598278
