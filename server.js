@@ -24,7 +24,7 @@ app.post('/nuevo_producto', function(request, response) {
 	MongoClient.connect('mongodb://heroku_3d3n3f2w:ncdbtnibs1psbs61rr0oa8a42m@ds033259.mlab.com:33259/heroku_3d3n3f2w', function(err,db) {
 		var collection = db.collection('animales')
 		
-		collection.insert({"tipo":nproduct.tipo,"raza":nproduct.raza, "telefono": nproduct.telf, "desc": nproduct.desc, "imagen":nproduct.imagen}, function(err, result) {
+		collection.insert({"tipo":nproduct.tipo,"raza":nproduct.raza, "telefono":nproduct.telf, "desc":nproduct.desc, "imagen":nproduct.imagen}, function(err, result) {
 			if(err) {
 				response.send('Error al guardar.')
 				if(db) db.close()
