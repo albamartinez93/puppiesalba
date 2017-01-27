@@ -21,7 +21,7 @@ app.get('/', function(request, response) {
 
 app.post('/nuevo_producto', function(request, response) {
     var nproduct = request.body;
-	MongoClient.connect('mongodb://127.0.0.1:27017/animales', function(err,db) {
+	MongoClient.connect('mongodb://heroku_3d3n3f2w:ncdbtnibs1psbs61rr0oa8a42m@ds033259.mlab.com:33259/heroku_3d3n3f2w', function(err,db) {
 		var collection = db.collection('animales')
 		
 		collection.insert({"tipo":nproduct.tipo,"raza":nproduct.raza, "telefono": nproduct.telefono, "desc": nproduct.desc, "imagen":nproduct.imagen}, function(err, result) {
@@ -40,7 +40,7 @@ app.post('/nuevo_producto', function(request, response) {
 
 app.post('/borrar_producto', function(request, response) {
     var nproduct = request.body;
-	MongoClient.connect('mongodb://127.0.0.1:27017/animales', function(err,db) {
+	MongoClient.connect('mongodb://heroku_3d3n3f2w:ncdbtnibs1psbs61rr0oa8a42m@ds033259.mlab.com:33259/heroku_3d3n3f2w', function(err,db) {
 		var collection = db.collection('animales')
 			collection.remove({'telefono':nproduct.telefono},function(err,result){
 			if(err) {
@@ -57,7 +57,7 @@ app.post('/borrar_producto', function(request, response) {
 
 app.post('/modificar_producto', function(request, response) {
     var nproduct = request.body;
-	MongoClient.connect('mongodb://127.0.0.1:27017/animales', function(err,db) {
+	MongoClient.connect('mongodb://heroku_3d3n3f2w:ncdbtnibs1psbs61rr0oa8a42m@ds033259.mlab.com:33259/heroku_3d3n3f2w', function(err,db) {
 		var collection = db.collection('animales')
 			collection.update({telefono:nproduct.telefono},{$set: {raza: nproduct.raza}},function(err,result){
 			if(err) {
@@ -75,7 +75,7 @@ app.post('/modificar_producto', function(request, response) {
 
 
 app.get('/productos', function(request, response) {
-	MongoClient.connect('mongodb://127.0.0.1:27017/animales', function(err,db) {
+	MongoClient.connect('mongodb://heroku_3d3n3f2w:ncdbtnibs1psbs61rr0oa8a42m@ds033259.mlab.com:33259/heroku_3d3n3f2w', function(err,db) {
 		var collection = db.collection('animales')
 		collection.find().limit(50).toArray(function(err, results) {
 			if(err) {
